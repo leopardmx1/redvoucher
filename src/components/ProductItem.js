@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
 
 import ticket from '../assets/images/ticket.png'
+import cart from '../assets/images/cart.png'
 
 class ProductItem extends Component {
 
+  constructor(props) {
+    super(props)
+    this.pushCart = this.pushCart.bind(this)
+  }
 
+  pushCart() {
+    console.log(this.props.item)
+    console.log('agregar al carrito')
+  }
 
   render() {
     let image
@@ -22,7 +31,7 @@ class ProductItem extends Component {
             {this.props.item.name}
           </div>
           <div className="productPrice text-blue">
-            ${this.props.item.price}
+            ${this.props.item.price} <div className="circle cinepolis-color"><img src={cart} alt="" className="img-fluid"/> </div>
           </div>
         </div>
       </div>
