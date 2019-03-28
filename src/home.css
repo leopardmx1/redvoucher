@@ -1,0 +1,70 @@
+
+.HomePage {
+    box-sizing: border-box;
+    height: 100vh;
+    position: relative;
+}
+
+.HomePage h1 {
+    box-sizing: border-box;
+    margin: 0;
+    padding-top: 2rem;
+    width: 100%;
+    position: absolute;
+    top: 2rem;
+    color: #fff;
+    font-size: 3rem;
+}
+
+.gridPage {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    height: 100vh;
+}
+
+.gridItem {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.cinepolis-color {
+    background-color: var(--cinepolis-color);
+}
+
+.vips-color {
+    background-color: var(--vips-color);
+}
+
+.viajes-color {
+    background-color: var(--miescape-color);
+}
+
+.logo {
+    width: 50%;
+    max-width: 50%;
+}
+
+@media screen and (max-width: 767px) {
+    .HomePage h1 {
+        background-color: var(--red-rv-t);
+        position: relative;
+        top: 0;
+        margin: 0;
+        padding: 1rem 0;
+        font-size: 1.8rem;
+        height: 10vh;
+    }
+    .gridPage {
+        grid-template-columns: auto;
+        grid-template-rows: 33.33% 33.33% 33.33%;
+        height: 90vh;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .HomePage h1 {
+        font-size: 1.6rem;
+    }
+}
