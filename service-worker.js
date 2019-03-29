@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/redvoucher/precache-manifest.f9e37b66fb8665849413b86049c1b2d0.js"
+  "/redvoucher/precache-manifest.a44e5c325474e8e0c206bcc11dd66f41.js"
 );
 
 workbox.clientsClaim();
