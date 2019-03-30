@@ -1,27 +1,34 @@
 import React, { Component } from 'react'
+import cart from "../assets/images/cart.png";
 
 class Modal extends Component {
 
     constructor(props) {
         super(props)
     }
+
     render() {
-        let {type, url} = this.props
+        let {type, url, open, close} = this.props
         let body
         if(type === 'video') {
-            body = <iframe width="791" height="329" src={url} frameBorder="0"
+            body = <iframe src={url} frameBorder="0"
                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="video"
-                           allowFullScreen></iframe>
+                           allowFullScreen className="responsive-video"></iframe>
         } else {
             body = <img src={url} className="img-fluid" />
         }
 
         return (
-            <div className="overlay">
+            <div className={`modal overlay ${open ? 'show' : 'hide'}`} onClick={close}>
                 <div className="body">
-                    { body }
-                    <div className="addToCart">
-
+                    <div className="container">
+                        <div className="wrapper">
+                            { body }
+                        </div>
+                        <div className="addToCart">
+                            Comprar boletos ahora
+                            <div className="circle cinepolis-color"><img src={cart} className="img-fluid"/> </div>
+                        </div>
                     </div>
                 </div>
             </div>

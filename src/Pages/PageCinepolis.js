@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import HeaderApp from '../components/HeaderApp'
 import FooterApp from '../components/FooterApp'
 import ProductItem from '../components/ProductItem'
+import Modal from '../components/Modal'
 
 import promo from '../assets/images/promo.png'
 import banner from '../assets/images/capitana.png'
@@ -16,11 +17,22 @@ class PageCinepolis extends Component {
     }
 
     this.openVideo = this.openVideo.bind(this)
+    this.closeVideo = this.closeVideo.bind(this)
+  }
+
+  closeVideo() {
+    this.setState({isOpen: false})
   }
 
   openVideo() {
     console.log('open the video')
-    this.setState({openVideo: true})
+    this.setState({isOpen: true})
+  }
+
+  componentWillMount() {
+    document.addEventListener("scroll", (event) => {
+      console.log(window.scrollY)
+    } )
   }
 
 
@@ -64,6 +76,13 @@ class PageCinepolis extends Component {
       }
     ]
 
+    let productVideo = {
+                          id: 1,
+                          name: '6 boletos tradicionales pelicula iron man',
+                          description: 'Lorem ipsum dolor ghkkjhg jhghj',
+                          price: 260
+                        }
+
     let articles = products.map((item) => {
       return <div className="col" key={item.id}> <ProductItem item={item} type="cinepolis" /> </div>
     })
@@ -71,7 +90,7 @@ class PageCinepolis extends Component {
     return(
       <div className="pageApp cinepolis">
         <HeaderApp />
-        <div>
+        <div className="page">
           <header className="pageSlider">
             <div className="bottom">
               <div className="cl-1"></div>
@@ -96,8 +115,8 @@ class PageCinepolis extends Component {
             <div className="banner">
               <img src={banner} alt="Capitana" className="img-fluid"/>
               <div className="banner-logo flex">
-                <div className="col-2"></div>
-                <div className="col-5"></div>
+                <div className="col-2"><br/></div>
+                <div className="col-5"><br/></div>
                 <div className="col-5">
                   <img src={logoBanner} alt="" className="img-fluid"/>
                 </div>
@@ -114,15 +133,8 @@ class PageCinepolis extends Component {
 
         </div>
         <FooterApp />
+        <Modal type="video" open={this.state.isOpen} close={this.closeVideo} url="https://www.youtube.com/embed/MJIz2gf3Wa8" />
 
-        <div className="modal" >
-          <div className="body">
-            <iframe width="791" height="329" src="https://www.youtube.com/embed/MJIz2gf3Wa8" frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen></iframe>
-
-          </div>
-        </div>
       </div>
     )
   }

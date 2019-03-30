@@ -193,6 +193,7 @@ footer a i {
   background-size: cover;
   height: 100vh;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 
@@ -388,8 +389,85 @@ table {
   min-height: 60vh;
 }
 
+/*** Modal Overlay ***/
+
+.modal.overlay {
+  background: rgba(255,255,255, 0.5);
+  width: 100%;
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all linear 1s;
+}
+
+.modal.hide {
+  display: none;
+  height: 0;
+}
+
+.modal.show {
+  display: block;
+  height: 100%;
+}
+
+.responsive-video {
+  width: 100%;
+  min-height: 493px;
+  padding: 5rem 0 0;
+}
+
+.modal .addToCart {
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  display: flex;
+  align-items: center;
+  color: var(--cinepolis-color);
+  cursor: pointer;
+}
+
+.modal .circle {
+  margin: 0;
+  margin-left: 1rem;
+}
+
+
+
 @media all and (max-width: 767px) {
+  .HeaderApp nav {
+    display: none;
+  }
+
+  .cinepolis .HeaderApp {
+    background-color: var(--cinepolis-color);
+  }
+
   .flex {
-    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .wrapper.flex .col {
+    flex-basis: 48%;
+  }
+
+  .col-2 {
+    width: 100%;
+  }
+
+  .col-5 {
+    width: 48%;
+    margin: 1%;
+  }
+
+  header.pageSlider {
+    height: 44vh;
+  }
+
+  .page {
+    padding-top: 4.5rem;
+  }
+
+  .modal .addToCart {
+    right: 3rem;
   }
 }
