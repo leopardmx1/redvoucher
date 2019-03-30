@@ -11,6 +11,7 @@ class ProductItem extends Component {
   }
 
   pushCart() {
+
     console.log(this.props.item)
     console.log('agregar al carrito')
   }
@@ -18,6 +19,10 @@ class ProductItem extends Component {
   render() {
     let image
     if(this.props.type === 'cinepolis') {
+      image = ticket
+    } else if(this.props.type === 'Viajes') {
+      image = ticket
+    } else {
       image = ticket
     }
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 class Register extends Component {
 
@@ -26,8 +27,10 @@ class Register extends Component {
   }
 
   sendData(e) {
+    e.preventDefault()
     this.setState({ remember: true })
     console.log(this.state)
+
   }
 
   render() {
@@ -60,7 +63,13 @@ class Register extends Component {
               <input type="text" name="number" id="emplooye" placeholder="Numero de Empleado" />
               <input type="email" name="email" id="email" placeholder="Correo corporativo o personal" onChange={this.changeInput}/> <br/>
               <input type="password" name="pass" id="pass" placeholder="Contraseña" onChange={this.changeInput} />
-              <input type="password" name="pass_c" id="pass_c" placeholder="Confirmar Constraseña" onChange={this.changeInput} />
+              <input type="password" name="pass_c" id="pass_c" placeholder="Confirmar Constraseña" onChange={this.changeInput} /> <br/>
+              <div className="d-flex">
+                <div className="item">
+                  <input type="checkbox" name="acepto" id="acepto"/> <label htmlFor="acepto"> Acepto terminos y condiciones</label>
+                </div>
+              </div>
+
               <br/><br/>
               <button type="submit" className="send">Registrarme</button>
             </form>
@@ -68,6 +77,7 @@ class Register extends Component {
 
           </div>
         </div>
+        <Footer />
       </div>
     )
   }

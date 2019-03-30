@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { history } from '../components/_helpers';
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 import '../assets/css/Login.css'
-
 
 class Login extends Component {
 
@@ -28,8 +28,12 @@ class Login extends Component {
   }
 
   sendData(e) {
+    e.preventDefault()
+
+
     this.setState({ remember: true })
     console.log(this.state)
+    history.push('/home')
   }
 
 

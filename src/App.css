@@ -122,6 +122,10 @@ footer a i {
   color: white;
 }
 
+.HeaderApp.bg {
+  background: rgba(0,0,0,0.35);
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -143,6 +147,10 @@ footer a i {
 
 .brand-logo img {
   height: 3rem;
+}
+
+.header-page .wrapper {
+  display: flex;
 }
 
 .wrapper {
@@ -215,7 +223,7 @@ footer a i {
   flex-basis: 33.3%;
 }
 
-.register input[type=radio] {
+.register input[type=radio], .register input[type=checkbox] {
   width: auto;
   float: left;
 }
@@ -368,4 +376,20 @@ li i {
 
 footer img {
   margin-top: 1.5rem;
+}
+
+table {
+  border: 1px solid grey;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wrapper.main {
+  min-height: 60vh;
+}
+
+@media all and (max-width: 767px) {
+  .flex {
+    flex-direction: column;
+  }
 }
