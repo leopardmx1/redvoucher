@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import {history} from "../components/_helpers";
+
 import HeaderAppCart from '../components/HeaderAppCart'
 import Footer from '../components/Footer'
 
@@ -13,13 +15,22 @@ class Cart extends Component {
   }
 
   componentWillMount() {
-    this.setState({ cart: localStorage.getItem('cart') })
+    this.setState({ cart: JSON.parse(localStorage.getItem('cart')) })
+  }
+
+  goBack() {
+    history.goBack()
   }
 
   render() {
     let { cart } = this.state
     let items
+
     if(cart!== null && cart.length > 0) {
+      items =  cart.map((item) => {
+        return <tr className="item"> <td> <button className="delete">&times;</button> </td> <td> {item.description} </td>
+                      <td> <input type="number" name="qty" defaultValue={item.qty} /> </td> <td> {item.price} </td> <td> {item.qty*item.price} </td> </tr>
+      })
 
     } else {
       items = <tr class="cl-2 white-text"> <td colSpan="5">No hay productos en el carrito</td> </tr>
@@ -43,6 +54,12 @@ class Cart extends Component {
             {items}
             </tbody>
           </table>
+          <div className="cl-2 data">
+            Tus folios se enviaran al correo: hola@mundo.com
+          </div>
+          <div>
+            <a onClick={this.goBack}> Regresar al catalogo</a>
+          </div>
         </div>
         <Footer />
       </div>

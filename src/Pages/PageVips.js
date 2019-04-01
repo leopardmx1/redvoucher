@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 
-import { history } from "../components/_helpers";
-
 import HeaderApp from '../components/HeaderApp'
 import FooterApp from '../components/FooterApp'
 import ProductItem from '../components/ProductItem'
@@ -10,8 +8,9 @@ import Modal from '../components/Modal'
 import promo from '../assets/images/promo.png'
 import banner from '../assets/images/capitana.png'
 import logoBanner from '../assets/images/capitana-logo.png'
+import {history} from "../components/_helpers";
 
-class PageCinepolis extends Component {
+class PageVips extends Component {
   constructor() {
     super()
     this.state = {
@@ -21,6 +20,10 @@ class PageCinepolis extends Component {
 
     this.openVideo = this.openVideo.bind(this)
     this.closeVideo = this.closeVideo.bind(this)
+  }
+
+  goBack() {
+    history.goBack()
   }
 
   closeVideo(e) {
@@ -52,10 +55,6 @@ class PageCinepolis extends Component {
     })
   }
 
-  goBack() {
-    history.goBack()
-  }
-
 
   render() {
     let products = [
@@ -72,7 +71,6 @@ class PageCinepolis extends Component {
         description: 'Lorem ipsum dolor ghkkjhg jhghj',
         price: 260,
         qty: 1
-
       },
       {
         id: 3,
@@ -105,19 +103,19 @@ class PageCinepolis extends Component {
     ]
 
     let productVideo = {
-      id: 1,
-      name: '6 boletos tradicionales pelicula iron man',
-      description: 'Lorem ipsum dolor ghkkjhg jhghj',
-      price: 260,
-      qty: 1
+        id: 1,
+        name: '6 boletos tradicionales pelicula iron man',
+        description: 'Lorem ipsum dolor ghkkjhg jhghj',
+        price: 260,
+        qty: 1
     }
 
     let articles = products.map((item) => {
-      return <div className="col" key={item.id}> <ProductItem item={item} type="cinepolis" /> </div>
+      return <div className="col" key={item.id}> <ProductItem item={item} type="vips" /> </div>
     })
 
     return(
-      <div className="pageApp cinepolis">
+      <div className="pageApp vips">
         <HeaderApp bgMenu={this.state.scrollMenu} />
 
         <div className="page">
@@ -160,9 +158,6 @@ class PageCinepolis extends Component {
           <div className="wrapper flex productItems">
             {articles}
           </div>
-          <div>
-            <a onClick={this.goBack}> Regresar al inicio</a>
-          </div>
 
         </div>
         <FooterApp />
@@ -173,4 +168,4 @@ class PageCinepolis extends Component {
   }
 }
 
-export default PageCinepolis
+export default PageVips

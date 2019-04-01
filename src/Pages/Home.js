@@ -7,7 +7,13 @@ import logoVips from '../assets/images/logo-vips.png'
 import logoEscape from '../assets/images/logo-miescape.png'
 
 class Home extends Component{
-  render() {
+    componentWillMount() {
+        if (!localStorage.getItem('cart')) {
+            localStorage.setItem('cart', JSON.stringify([]))
+        }
+    }
+
+    render() {
     return(
       <div className="HomePage">
         <h1 className="text"> &iquest;Qué quieres a hacer hoy? </h1>
