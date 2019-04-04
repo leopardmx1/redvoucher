@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { toast } from 'react-toastify';
+import { addToCart } from './actions/cartActions'
+import { connect } from 'react-redux'
 
-
-import ticket from '../assets/images/ticket.png'
 import cart from '../assets/images/cart.png'
 
 class ProductItem extends Component {
@@ -12,14 +12,17 @@ class ProductItem extends Component {
     this.pushCart = this.pushCart.bind(this)
   }
 
-  pushCart() {
-
+  pushCart = (id) => {
+    this.props.addToCart(id); 
+    toast('Producto agregado al carrito')
   }
+
+  
 
   render() {
 
     return (
-      <div className="productItem" onClick={this.pushCart}>
+      <div className="productItem" onClick={() => this.pushCart(this.props.item.id)}>
         <div className="image">
           <img src={this.props.item.img} alt="" className="img-fluid"/>
         </div>
@@ -36,4 +39,12 @@ class ProductItem extends Component {
   }
 }
 
-export default ProductItem
+const mapDispatchToProps = (dispatch) =>{
+  return{
+      addToCart: (id) => { 
+        dispatch(addToCart(id)) 
+      }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(ProductItem)

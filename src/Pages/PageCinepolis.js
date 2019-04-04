@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 
+import { connect } from 'react-redux'
 import { history } from "../components/_helpers";
 
 import HeaderApp from '../components/HeaderApp'
@@ -42,6 +43,7 @@ class PageCinepolis extends Component {
   }
 
   componentWillMount() {
+    console.log(this.props)
     document.addEventListener("scroll", (event) => {
       let scroll = window.scrollY
       if(scroll > 60) {
@@ -112,7 +114,7 @@ class PageCinepolis extends Component {
       qty: 1
     }
 
-    let articles = products.map((item) => {
+    let articles = this.props.products.map((item) => {
       return <div className="col" key={item.id}> <ProductItem item={item} type="cinepolis" /> </div>
     })
 
@@ -173,4 +175,9 @@ class PageCinepolis extends Component {
   }
 }
 
-export default PageCinepolis
+const mapStateToProps = (state) => {
+  
+  return { products: state.products }
+}
+
+export default connect(mapStateToProps)(PageCinepolis)
