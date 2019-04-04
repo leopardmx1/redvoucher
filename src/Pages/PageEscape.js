@@ -10,7 +10,7 @@ import banner from '../assets/images/capitana.png'
 import logoBanner from '../assets/images/capitana-logo.png'
 import {history} from "../components/_helpers";
 
-class PageVips extends Component {
+class PageEscape extends Component {
   constructor() {
     super()
     this.state = {
@@ -115,7 +115,7 @@ class PageVips extends Component {
     })
 
     return(
-      <div className="pageApp vips">
+      <div className="pageApp escape">
         <HeaderApp bgMenu={this.state.scrollMenu} />
 
         <div className="page">
@@ -171,4 +171,4 @@ class PageVips extends Component {
   }
 }
 
-export default PageVips
+export default PageEscape

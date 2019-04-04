@@ -9,6 +9,7 @@ import Register from './Pages/Register'
 import PageCinepolis from './Pages/PageCinepolis'
 import Cart from './Pages/Cart'
 import PageVips from './Pages/PageVips'
+import PageEscape from './Pages/PageEscape'
 
 
 
@@ -24,6 +25,7 @@ class Main extends Component {
                         <Route exact path='/register' component={Register} />
                         <Route exact path='/cinepolis' component={PageCinepolis} />
                         <Route exact path='/vips' component={PageVips} />
+                        <Route exact path='/mi-escape' component={PageEscape} />
                         <Route exact path='/cart' component={Cart} />
 
                     </Switch>

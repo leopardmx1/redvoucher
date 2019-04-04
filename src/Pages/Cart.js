@@ -58,6 +58,16 @@ class Cart extends Component {
             Tus folios se enviaran al correo: hola@mundo.com
           </div>
           <div>
+            <div className="d-flex">
+              <div className="item">
+                <input type="checkbox" name="acepto" id="acepto"/> <label htmlFor="acepto"> Acepto aviso de privacidad</label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button className="btn cl-2">Pagar</button>
+          </div>
+          <div>
             <a onClick={this.goBack}> Regresar al catalogo</a>
           </div>
         </div>

@@ -13,7 +13,7 @@
     position: absolute;
     top: 2rem;
     color: #fff;
-    font-size: 3rem;
+    font-size: 4.5rem;
 }
 
 .gridPage {
@@ -44,6 +44,15 @@
 .logo {
     width: 50%;
     max-width: 50%;
+}
+
+.vips-color .logo {
+    max-width: 40%;
+}
+
+.cinepolis-color .logo {
+    width: 65%;
+    max-width: 65%;
 }
 
 @media screen and (max-width: 767px) {

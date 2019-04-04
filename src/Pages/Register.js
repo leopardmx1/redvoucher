@@ -11,10 +11,18 @@ class Register extends Component {
       firstName: '',
       lastName: '',
       gender: '',
-      user: '',
+      day: '',
+      month: '',
+      year: '',
       pass: '',
       pass_c: '',
-
+      registerType: '',
+      empleado: '',
+      email: '',
+      tarjeta: '',
+      showTarjeta: false,
+      showEmail: false,
+      showEmpleado: false,
     }
 
     this.changeInput = this.changeInput.bind(this)
@@ -22,8 +30,32 @@ class Register extends Component {
   }
 
   changeInput(e) {
+    let name = e.target.name, value = e.target.value
     console.log(e.target.name, e.target.value)
-    this.setState({ [e.target.name]: e.target.value })
+
+    if(name === 'registerType') {
+      switch (value) {
+        case 'email':
+          this.setState({showEmail: true})
+          this.setState({showTarjeta: false})
+          this.setState({showEmpleado: false})
+          break
+        case 'tarjeta':
+          this.setState({showEmail: false})
+          this.setState({showTarjeta: true})
+          this.setState({showEmpleado: false})
+          break
+        case 'empleado':
+          this.setState({showEmail: false})
+          this.setState({showTarjeta: false})
+          this.setState({showEmpleado: true})
+          break
+
+      }
+    }
+
+
+    this.setState({ [name]: value })
   }
 
   sendData(e) {
@@ -52,16 +84,23 @@ class Register extends Component {
               </div>
               <div className="d-flex">
                 <div className="item">
-                  <label htmlFor="male">Hombre</label>
                   <input type="radio" name="gender" id="male" value="hombre" placeholder="Hombre" onChange={this.changeInput} />
+                  <label htmlFor="male">Hombre</label>
                 </div>
                 <div className="item">
-                  <label htmlFor="female">Mujer</label>
                   <input type="radio" name="gender" id="female" value="mujer" onChange={this.changeInput} />
+                  <label htmlFor="female">Mujer</label>
                 </div>
               </div>
-              <input type="text" name="number" id="emplooye" placeholder="Numero de Empleado" />
-              <input type="email" name="email" id="email" placeholder="Correo corporativo o personal" onChange={this.changeInput}/> <br/>
+              <select name="registerType" id="registerType" onChange={this.changeInput}>
+                <option value="" disabled selected>Selecciona una opci&oacute;n</option>
+                <option value="email">Correo electr&oacute;nico</option>
+                <option value="empleado">Empleado</option>
+                <option value="tarjeta">No. de Tarjeta</option>
+              </select>
+              <input type="text" name="empleado" id="empleado" placeholder="Numero de Empleado" onChange={this.changeInput} className={`${this.state.showEmpleado ? 'show' : 'hide'}`} />
+              <input type="email" name="email" id="email" placeholder="Correo corporativo o personal" onChange={this.changeInput} className={`${this.state.showEmail ? 'show' : 'hide'}`}/>
+              <input type="text" name="tarjeta" id="tarjeta" placeholder="Numero de Tarjeta" onChange={this.changeInput} className={`${this.state.showTarjeta ? 'show' : 'hide'}`} />
               <input type="password" name="pass" id="pass" placeholder="Contraseña" onChange={this.changeInput} />
               <input type="password" name="pass_c" id="pass_c" placeholder="Confirmar Constraseña" onChange={this.changeInput} /> <br/>
               <div className="d-flex">

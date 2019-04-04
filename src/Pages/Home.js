@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 
 import '../home.css'
-import logoCinepolis from '../assets/images/logo-cinepolis.png'
-import logoVips from '../assets/images/logo-vips.png'
-import logoEscape from '../assets/images/logo-miescape.png'
+import logoCinepolis from '../assets/svg/Cinepolis.svg'
+import logoVips from '../assets/svg/VIPS.svg'
+import logoEscape from '../assets/svg/MIESCAPE.svg'
 
 class Home extends Component{
     componentWillMount() {

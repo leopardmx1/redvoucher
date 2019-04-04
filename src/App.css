@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
 
+
 :root{
-  --cinepolis-color: #0070c7;
-  --vips-color: #fe9800;
-  --miescape-color: #5ad602;
-  --green-two: #74ae86;
-  --red-rv: #cc233c;
+  --cinepolis-color: #2476c1;
+  --vips-color: #f39a3e;
+  --miescape-color: #7dcd37;
+  --green-two: #4eb086;
+  --red-rv: #ed3833;
   --red-rv-t: #cc3b36;
   --gray-first: #a2a2a2;
   --gray-second: #ecece9;
-  --text-gray: #9a999e;
+  --text-gray: #afafaf;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html, body {
@@ -25,6 +30,11 @@ hr {
   margin-top: 2rem;
 }
 
+h2 {
+  font-size: 2.5rem;
+  color: #5B5B5F;
+}
+
 ::placeholder {
   color: var(--text-gray);
 }
@@ -35,19 +45,37 @@ label {
 
 
 
-input[type=text], input[type=tel], input[type=password], input[type=number], input[type=email] {
-  border: 1px solid rgba(236,236,233,0.3);
-  min-width: 300px;
+input[type=text], input[type=tel], input[type=password], input[type=number], input[type=email], select {
+  border: 1px solid var(--text-gray);
+  min-width: 100%;
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-family: 'Ubuntu', sans-serif;
   margin: 0.5rem 0;
 }
 
-input[type=number] {
-  min-width: 80px;
-  width: 80px;
-  margin-right: 10px;
+select {
+  width: 100%;
+  background: #fff;
+  color: var(--text-gray);
+
+}
+
+select option {
+  background: #333;
+  color: var(--text-gray);
+  text-align: center !important;
+  padding: 1rem 0;
+}
+
+
+
+input.hide {
+  display: none;
+}
+
+input.show {
+  display: block;
 }
 
 button, .btn {
@@ -62,7 +90,8 @@ button.send {
   background: var(--green-two);
   color: #fff;
   width: 100%;
-  max-width: 280px;
+  max-width: 300px;
+  display: block;
 }
 
 footer hr {
@@ -236,27 +265,60 @@ footer a i {
   width: 100%;
 }
 
+.register input[type=radio] + label, .register input[type=checkbox] + label {
+  margin: 0.64rem 0;
+  display: block;
+}
+
+form {
+  text-align: left;
+}
+
+form button {
+  text-align: center;
+  margin: 0 auto;
+  background: var(--green-two);
+  color: #fff;
+}
+
+.LoginPage form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h3 {
+  color: var(--text-gray);
+}
+
 .register input[type=number] {
   width: 33%;
 }
 
 .d-flex {
-  width: 450px;
+  display: -webkit-flex;
   display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.d-flex input[type=number] {
+  flex-basis: 30%;
+  min-width: 60px;
+}
+
+button {
+  cursor: pointer;
 }
 
 .d-flex div {
   flex: 1;
 }
 
-.d-flex > input {
-  flex: 1;
-  flex-basis: 33.3%;
-}
-
 .register input[type=radio], .register input[type=checkbox] {
   width: auto;
   float: left;
+  margin: 0.75rem;
 }
 
 .HeaderApp {
@@ -387,6 +449,7 @@ li i {
 
 .productItem .text {
   padding: 0.5rem 0;
+  position: relative;
 }
 
 .vips .productPrice.text-blue {
@@ -398,16 +461,22 @@ li i {
 }
 
 .circle {
-  width: 35px;
-  height: 35px;
-  padding: 0.5rem;
+  width: 40px;
+  height: 40px;
+  padding: 0.3rem;
   border-radius: 29px;
   float: right;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-right: 0;
+  margin-bottom: 0;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  display: flex;
 }
 
-.circle img {max-width: 30px;}
+.circle img {
+  max-width: 30px;
+}
 
 .white-text {
   color: #fff;
@@ -469,11 +538,17 @@ th {
   padding: 5rem 0 0;
 }
 
+.modal .container {
+  position: relative;
+}
+
 .modal .addToCart {
   position: absolute;
-  bottom: 4rem;
-  right: 4rem;
+  bottom: 2rem;
+  right: 5rem;
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
   color: var(--cinepolis-color);
   cursor: pointer;
@@ -497,7 +572,7 @@ th {
   width: 250px;
   position: fixed;
   transition: all linear 1s;
-  z-index: 3;
+  z-index: 5;
   top: 4rem;
   right: 14rem;
 }
@@ -545,12 +620,44 @@ button.delete {
   color: #fff;
   font-weight: bold;
   padding: 2rem;
-  max-width: 74.5%;
-  margin: 0 auto;
+  max-width: 79.93%;
+  margin: 0 auto 1.5rem;
+
 }
 
 .cart .dropdown {
   background: var(--cinepolis-color);
+}
+
+.cart .dropdown {
+  background: var(--cinepolis-color);
+}
+
+.cart li.text-green a:active {
+  color: var(--cinepolis-color);
+}
+
+.cart button {
+  color: white;
+  margin: 1rem;
+  width: 200px;
+}
+
+
+.addToCart .circle {
+  position: initial;
+}
+
+img.logo-footer {
+  max-width: 90%;
+  margin: 1rem auto 0;
+}
+
+
+
+.text-gray {
+  color: var(--gray-first);
+  font-weight: bold;
 }
 
 @media all and (max-width: 767px) {
@@ -577,6 +684,11 @@ button.delete {
     flex-basis: 48%;
   }
 
+  footer .wrapper.flex .col, footer .wrapper.flex .col.text-left {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
   .col-2 {
     width: 100%;
   }
@@ -586,7 +698,7 @@ button.delete {
     margin: 1%;
   }
 
-  header.pageSlider {
+  .cinepolis .pageSlider, .vips .pageSlider {
     height: 44vh;
   }
 
@@ -641,4 +753,63 @@ button.delete {
   .desktop {
     display: none;
   }
+
+  img.logo-footer {
+    max-width: 55%;
+    margin: 1rem auto 0;
+  }
+
+  .circle img {
+    max-width: 15px;
+    height: 15px;
+  }
+
+  .circle {
+    width: 14px;
+    height: 14px;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  .text-gray {
+    font-size: 0.9rem;
+  }
+
+  .productPrice.text-blue {
+    font-size: 1.4rem;
+  }
+
+  .LoginPage form {
+    max-width: 90%;
+  }
+  .LoginPage input[type=text], .LoginPage input[type=password] {
+    width: 100%;
+  }
+
+  .LoginPage hr {
+    width: 90%;
+  }
 }
+
+/** Mi escape **/
+
+.escape .bg {
+  background: var(--miescape-color);
+}
+
+.escape .pageSlider {
+  background: url('./assets/images/home.jpg') top center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.escape .productPrice.text-blue {
+  color: var(--miescape-color);
+}
+
+.escape .rectangle {
+  background: var(--miescape-color);
+}
+

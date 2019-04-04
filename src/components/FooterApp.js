@@ -23,7 +23,7 @@ class FooterApp extends Component {
             <h4>CONTACTO</h4>
             <p>contacto@redcompanies.com.mx</p>
             <p>+ 52 (55) 5595 9476 / 7889 0902</p>
-            <img src={Logo} alt=""/>
+            <img src={Logo} alt="" className="logo-footer"/>
           </div>
         </div>
       </footer>
