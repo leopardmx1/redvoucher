@@ -252,9 +252,9 @@ footer a i {
 }
 
 .cinepolis .pageSlider {
-  background: url('./assets/images/home.jpg') top center no-repeat;
+  background: url('./assets/images/Imagen_header.jpg') top center no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 70vh;
   margin-bottom: 2rem;
   position: relative;
 }
