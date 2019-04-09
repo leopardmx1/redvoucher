@@ -94,13 +94,12 @@ class Register extends Component {
               </div>
               <select name="registerType" id="registerType" onChange={this.changeInput}>
                 <option value="" disabled selected>Selecciona una opci&oacute;n</option>
-                <option value="email">Correo electr&oacute;nico</option>
                 <option value="empleado">Empleado</option>
                 <option value="tarjeta">No. de Tarjeta</option>
               </select>
               <input type="text" name="empleado" id="empleado" placeholder="Numero de Empleado" onChange={this.changeInput} className={`${this.state.showEmpleado ? 'show' : 'hide'}`} />
-              <input type="email" name="email" id="email" placeholder="Correo corporativo o personal" onChange={this.changeInput} className={`${this.state.showEmail ? 'show' : 'hide'}`}/>
               <input type="text" name="tarjeta" id="tarjeta" placeholder="Numero de Tarjeta" onChange={this.changeInput} className={`${this.state.showTarjeta ? 'show' : 'hide'}`} />
+              <input type="email" name="email" id="email" placeholder="Correo corporativo o personal" onChange={this.changeInput} />
               <input type="password" name="pass" id="pass" placeholder="Contraseña" onChange={this.changeInput} />
               <input type="password" name="pass_c" id="pass_c" placeholder="Confirmar Constraseña" onChange={this.changeInput} /> <br/>
               <div className="d-flex">

@@ -1,35 +1,37 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import { removeToCart } from '../components/actions/cartActions'
 
 import {history} from "../components/_helpers";
 
 import HeaderAppCart from '../components/HeaderAppCart'
 import Footer from '../components/Footer'
+import {toast} from "react-toastify";
 
 class Cart extends Component {
 
   constructor() {
     super()
-    this.state = {
-      cart: []
-    }
-  }
-
-  componentWillMount() {
-    this.setState({ cart: JSON.parse(localStorage.getItem('cart')) })
   }
 
   goBack() {
     history.goBack()
   }
 
+  removeToCart = (id) => {
+    this.props.removeToCart(id);
+    toast('Producto eliminado del carrito')
+  }
+
   render() {
-    let { cart } = this.state
+    let { cart } = this.props
     let items
 
     if(cart!== null && cart.length > 0) {
       items =  cart.map((item) => {
-        return <tr className="item"> <td> <button className="delete">&times;</button> </td> <td> {item.description} </td>
-                      <td> <input type="number" name="qty" defaultValue={item.qty} /> </td> <td> {item.price} </td> <td> {item.qty*item.price} </td> </tr>
+        return <tr className="item"> <td> <button className="delete" onClick={() => this.removeToCart(item.id)}>&times;</button> </td> <td> <b>{item.title}</b><br/>{item.description} </td>
+                      <td> <input type="number" name="qty" defaultValue={item.quantity} /> </td> <td> {item.price} </td> <td> { item.subtotal } </td> </tr>
       })
 
     } else {
@@ -57,13 +59,7 @@ class Cart extends Component {
           <div className="cl-2 data">
             Tus folios se enviaran al correo: hola@mundo.com
           </div>
-          <div>
-            <div className="d-flex">
-              <div className="item">
-                <input type="checkbox" name="acepto" id="acepto"/> <label htmlFor="acepto"> Acepto aviso de privacidad</label>
-              </div>
-            </div>
-          </div>
+
           <div>
             <button className="btn cl-2">Pagar</button>
           </div>
@@ -77,4 +73,18 @@ class Cart extends Component {
   }
 }
 
-export default Cart
+const mapStateToProps = (state) => {
+
+  return { cart: state.cart }
+
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeToCart: (id) => {
+      dispatch(removeToCart(id))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart)

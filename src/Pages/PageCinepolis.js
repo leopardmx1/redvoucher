@@ -145,17 +145,9 @@ class PageCinepolis extends Component {
           </div>
           <div className="wrapper">
             <div className="banner">
-              <img src={banner} alt="Capitana" className="img-fluid"/>
-              <div className="banner-logo flex">
-                <div className="col-2"><br/></div>
-                <div className="col-5"><br/></div>
-                <div className="col-5">
-                  <img src={logoBanner} alt="" className="img-fluid"/>
-                </div>
-              </div>
-              <div className="rectangle cinepolis-color" onClick={this.openVideo}>
-                <p> Ver trailer </p>
-              </div>
+              <iframe src="https://www.youtube.com/embed/MJIz2gf3Wa8" frameBorder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="video"
+                      allowFullScreen className="responsive-video"></iframe>
             </div>
           </div>
 
@@ -168,7 +160,7 @@ class PageCinepolis extends Component {
 
         </div>
         <FooterApp />
-        <Modal type="video" open={this.state.isOpen} close={this.closeVideo} url="https://www.youtube.com/embed/MJIz2gf3Wa8" item={productVideo} />
+
 
       </div>
     )

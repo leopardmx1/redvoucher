@@ -184,6 +184,7 @@ footer a i {
 .img-fluid {
   width: 100%;
   height: auto;
+  display: block;
 }
 
 .header-page {
@@ -426,7 +427,7 @@ li i {
 }
 
 .productItem .image {
-  padding: 2rem;
+  padding: 0;
   background: #f7f7f8;
 }
 
@@ -658,6 +659,56 @@ img.logo-footer {
 .text-gray {
   color: var(--gray-first);
   font-weight: bold;
+}
+
+button.delete {
+  width: 40px;
+  height: 40px;
+  line-height: 18px;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.cart input[type="number"] {
+    width: 150px;
+}
+
+footer .wrapper {
+  font-size: 0.85rem;
+}
+
+footer hr {
+  max-width: 60%;
+}
+
+#intro video.responsive-video {
+    padding: 0;
+}
+
+#intro {
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+}
+
+#intro.show {
+  display: block;
+}
+
+#intro.hide {
+  display:none;
+}
+
+video {
+    object-fit: cover;
+}
+
+#intro .addToCart {
+  z-index: 33;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
 }
 
 @media all and (max-width: 767px) {

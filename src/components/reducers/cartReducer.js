@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from '../actions/cartActions'
+import {ADD_TO_CART, REMOVE_TO_CART} from '../actions/cartActions'
 
 import Item1 from '../../assets/images/products/Imagen_1.jpg'
 import Item2 from '../../assets/images/products/Imagen_2.jpg'
@@ -18,18 +18,18 @@ import Item12 from '../../assets/images/products/Imagen_12.jpg'
 
 const initState = {
     products: [
-        {id:1,title:'Cinépolis Klic', description: "Folio válido solo para renta de cualquier película del catalogo. No aplica para rentar películas de estreno, preestreno, preventa ni para partidos de fútbol, béisbol o eventos en vivo.", price:110,img:Item1},
-        {id:2,title:'Adidas', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:80,img: Item2},
-        {id:3,title:'Vans', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:120,img: Item3},
-        {id:4,title:'White', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:260,img:Item4},
-        {id:5,title:'Cropped-sho', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:160,img: Item5},
-        {id:6,title:'Blues', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:90,img: Item6},
-        {id:7,title:'Cinépolis Klic', description: "Folio válido solo para renta de cualquier película del catalogo. No aplica para rentar películas de estreno, preestreno, preventa ni para partidos de fútbol, béisbol o eventos en vivo.", price:110,img:Item7},
-        {id:8,title:'Adidas', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:80,img: Item8},
-        {id:9,title:'Vans', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:120,img: Item9},
-        {id:10,title:'White', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:260,img:Item10},
-        {id:11,title:'Cropped-sho', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:160,img: Item11},
-        {id:12,title:'Blues', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:90,img: Item12}
+        {id:1,title:'Cinépolis Klic', description: "Folio válido solo para renta de cualquier película del catalogo. No aplica para rentar películas de estreno, preestreno, preventa ni para partidos de fútbol, béisbol o eventos en vivo.", price:39,img:Item1},
+        {id:2,title:'Combos medianos', description: "4 combos medianos válidos de lunes a domingo; cada combo contiene unas palomitas medianas y un refresco mediano.", price:237,img: Item2},
+        {id:3,title:'Boleto tradicional 2D', description: "6 boletos tradicionales válidos de lunes a domingo.",price:270,img: Item3},
+        {id:4,title:'Boletos 2D y combos medianos', description: "4 boletos válidos de lunes a viernes + 2 combos medianos de palomitas y refrescos", price:262,img:Item4},
+        {id:5,title:'Boletos Tradicionales y combos med.', description: "4 boletos válidos de lunes a domingo + 2 combos medianos de palomitas y refrescos", price:294,img: Item5},
+        {id:6,title:'Boletos Tradicionales y combo nachos', description: "4 boletos válidos de lunes a domingo + 2 combos nachos normales y refrescos medianos.",price:294,img: Item6},
+        {id:7,title:'Boletos Tradicionales y combo hot dog', description: "4 boletos válidos de lunes a domingo + 2 combos hot dog normal y refrescos medianos", price:294,img:Item7},
+        {id:8,title:'Boletos IMAX y Combos Medianos', description: "4 boletos 3D o IMAX válidos de lunes a domingo + 2 combos medianos de palomitas y refrescos.", price:382,img: Item8},
+        {id:9,title:'Boletos 4DX', description: "4 boletos 4DX válidos de lunes a domingo.",price:474,img: Item9},
+        {id:10,title:'Boletos VIP 2D', description: "4 boletos VIP 2D válidos de lunes a domingo.", price:407,img:Item10},
+        {id:11,title:'Boleto Tradicional 2D', description: "4 boletos tradicionales válidos de lunes a domingo.", price:182,img: Item11},
+        {id:12,title:'Combos Grandes', description: "2 combos grandes válidos de lunes a domingo; cada combo contiene unas palomitas grandes de mantequilla y un refresco grande.",price:152,img: Item12}
     ],
     cart:[]
 }
@@ -57,6 +57,15 @@ const cartReducer = (state = initState, action)=>{
                     cart: [...state.cart, addedProduct]
                 }
                 
+            }
+        case REMOVE_TO_CART:
+            let itemToRemove= state.cart.find(item=> action.id === item.id)
+            let new_items = state.cart.filter(item=> action.id !== item.id)
+
+            //calculating the total
+            return{
+                ...state,
+                cart: new_items
             }
         default:
             return state

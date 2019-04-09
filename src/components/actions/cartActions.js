@@ -1,4 +1,5 @@
 export const ADD_TO_CART = 'ADD_TO_CART'
+export const REMOVE_TO_CART = 'REMOVE_TO_CART'
 
 
 export const addToCart= (id)=>{
@@ -6,4 +7,11 @@ export const addToCart= (id)=>{
         type: ADD_TO_CART,
          id 
         }
+}
+
+export const removeToCart = (id) => {
+    return {
+        type: REMOVE_TO_CART,
+        id
+    }
 }
