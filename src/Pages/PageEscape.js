@@ -8,7 +8,7 @@ import Modal from '../components/Modal'
 import promo from '../assets/images/promo.png'
 import banner from '../assets/images/capitana.png'
 import logoBanner from '../assets/images/capitana-logo.png'
-import {history} from "../components/_helpers";
+import {history} from "../components/_helpers/history";
 
 class PageEscape extends Component {
   constructor() {

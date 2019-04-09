@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import { connect } from 'react-redux'
-import { history } from "../components/_helpers";
+import { history } from "../components/_helpers/history";
 
 import HeaderApp from '../components/HeaderApp'
 import FooterApp from '../components/FooterApp'
@@ -11,6 +11,7 @@ import Modal from '../components/Modal'
 import promo from '../assets/images/promo.png'
 import banner from '../assets/images/capitana.png'
 import logoBanner from '../assets/images/capitana-logo.png'
+import ItemDestacado from "../components/ItemDestacado";
 
 class PageCinepolis extends Component {
   constructor() {
@@ -118,6 +119,10 @@ class PageCinepolis extends Component {
       return <div className="col" key={item.id}> <ProductItem item={item} type="cinepolis" /> </div>
     })
 
+    let destacados = this.props.latest.map((item) => {
+      return <div className="col-5"> <ItemDestacado item={item} /> </div>
+    })
+
     return(
       <div className="pageApp cinepolis">
         <HeaderApp bgMenu={this.state.scrollMenu} />
@@ -136,12 +141,7 @@ class PageCinepolis extends Component {
             <div className="col-2">
               <h2>Lo más vendido</h2>
             </div>
-            <div className="col-5">
-              <img src={promo} alt="" className="img-fluid"/>
-            </div>
-            <div className="col-5">
-              <img src={promo} alt="" className="img-fluid"/>
-            </div>
+            {destacados}
           </div>
           <div className="wrapper">
             <div className="banner">
@@ -169,7 +169,7 @@ class PageCinepolis extends Component {
 
 const mapStateToProps = (state) => {
   
-  return { products: state.products }
+  return { products: state.products, latest: state.latestBuy }
 }
 
 export default connect(mapStateToProps)(PageCinepolis)

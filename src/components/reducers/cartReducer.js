@@ -12,6 +12,7 @@ import Item9 from '../../assets/images/products/Imagen_9.jpg'
 import Item10 from '../../assets/images/products/Imagen_10.jpg'
 import Item11 from '../../assets/images/products/Imagen_11.jpg'
 import Item12 from '../../assets/images/products/Imagen_12.jpg'
+import Item13 from '../../assets/images/products/imagen_13.png'
 
 
 
@@ -30,6 +31,10 @@ const initState = {
         {id:10,title:'Boletos VIP 2D', description: "4 boletos VIP 2D válidos de lunes a domingo.", price:407,img:Item10},
         {id:11,title:'Boleto Tradicional 2D', description: "4 boletos tradicionales válidos de lunes a domingo.", price:182,img: Item11},
         {id:12,title:'Combos Grandes', description: "2 combos grandes válidos de lunes a domingo; cada combo contiene unas palomitas grandes de mantequilla y un refresco grande.",price:152,img: Item12}
+    ],
+    latestBuy: [
+        {id:13,title:'6 boletos tradicionales de lunes a domingo', description: "Folio válido solo para renta de cualquier película del catalogo. No aplica para rentar películas de estreno, preestreno, preventa ni para partidos de fútbol, béisbol o eventos en vivo.", price:39,img:Item13},
+        {id:14,title:'Combos medianos', description: "4 combos medianos válidos de lunes a domingo; cada combo contiene unas palomitas medianas y un refresco mediano.", price:237,img: Item13},
     ],
     cart:[]
 }

@@ -19,6 +19,7 @@ class Register extends Component {
       registerType: '',
       empleado: '',
       email: '',
+      empresa: '',
       tarjeta: '',
       showTarjeta: false,
       showEmail: false,
@@ -92,9 +93,16 @@ class Register extends Component {
                   <label htmlFor="female">Mujer</label>
                 </div>
               </div>
+              <select name="empresa" id="empresa" onChange={this.changeInput}>
+                <option value="" disabled selected>Selecciona una empresa</option>
+                <option value="Leopard Techs">Leopard Tech's</option>
+                <option value="coca">Coca Cola</option>
+                <option value="bancomer">BBVA Bancomer</option>
+              </select>
               <select name="registerType" id="registerType" onChange={this.changeInput}>
                 <option value="" disabled selected>Selecciona una opci&oacute;n</option>
-                <option value="empleado">Empleado</option>
+                <option value="correo">Correo Corporativo</option>
+                <option value="empleado">No. de Empleado</option>
                 <option value="tarjeta">No. de Tarjeta</option>
               </select>
               <input type="text" name="empleado" id="empleado" placeholder="Numero de Empleado" onChange={this.changeInput} className={`${this.state.showEmpleado ? 'show' : 'hide'}`} />
@@ -104,7 +112,7 @@ class Register extends Component {
               <input type="password" name="pass_c" id="pass_c" placeholder="Confirmar Constraseña" onChange={this.changeInput} /> <br/>
               <div className="d-flex">
                 <div className="item">
-                  <input type="checkbox" name="acepto" id="acepto"/> <label htmlFor="acepto"> Acepto terminos y condiciones</label>
+                  <input type="checkbox" name="acepto" id="acepto"/> <label htmlFor="acepto"> Acepto términos y condiciones</label>
                 </div>
               </div>
 

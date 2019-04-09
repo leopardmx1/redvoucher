@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { removeToCart } from '../components/actions/cartActions'
 
-import {history} from "../components/_helpers";
+import {history} from "../components/_helpers/history";
 
 import HeaderAppCart from '../components/HeaderAppCart'
 import Footer from '../components/Footer'

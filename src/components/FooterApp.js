@@ -14,6 +14,7 @@ class FooterApp extends Component {
               <input type="email" name="email" placeholder="email"/>
               <br/><br/>
               <button type="submit">FOLLOW</button>
+              <a href="#"> <i className="fab fa-facebook"></i> Redvoucher</a>
             </form>
           </div>
           <div className="col">
@@ -21,7 +22,7 @@ class FooterApp extends Component {
           </div>
           <div className="col text-left">
             <h4>CONTACTO</h4>
-            <p>contacto@redcompanies.com.mx</p>
+            <p>hola@somosredcompanies.com</p>
             <p>+ 52 (55) 5595 9476 / 7889 0902</p>
             <img src={Logo} alt="" className="logo-footer"/>
           </div>

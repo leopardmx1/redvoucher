@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { history } from '../components/_helpers';
+import { history } from '../components/_helpers/history';
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -55,7 +55,7 @@ class Login extends Component {
           <div className="form">
             <form onSubmit={this.sendData}>
               <input type="text" name="user" id="user" placeholder="Email / No. de empleado / No. Tarjeta" onChange={this.changeInput}/> <br/>
-              <input type="password" name="pass" id="pass" placeholder="Constraseña" onChange={this.changeInput} /> <br/>
+              <input type="password" name="pass" id="pass" placeholder="Contraseña" onChange={this.changeInput} /> <br/>
               <input type="checkbox" name="rembember" id="remember"/> <label htmlFor="remember">Recordarme</label> <br/><br/>
               <button type="submit" className="send">Iniciar Sesión</button>
             </form>
