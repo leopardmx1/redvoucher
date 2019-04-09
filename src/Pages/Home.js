@@ -25,11 +25,10 @@ class Home extends Component{
               </Link>
           </div>
           <div className="gridItem vips-color">
-
+              <p style={{width: "100%", color: "#f4c7a8", margin: 0, fontSize: "1.5rem" }}>¿Y si mejor nos tomamos un café?</p>
               <Link to="/vips" className="logo">
                 <img src={logoVips} alt="Logo vips" className="img-fluid"/>
               </Link>
-              <p style={{width: "100%", color: "#f4c7a8", margin: 0, fontSize: "1.5rem" }}>¿Y si mejor nos tomamos un café?</p>
           </div>
           <div className="gridItem viajes-color">
               <p style={{width: "100%", color: "#c8f78b", margin: 0, fontSize: "1.5rem"}}>¿O nos vamos de viaje?</p>

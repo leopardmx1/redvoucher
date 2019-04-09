@@ -9,6 +9,7 @@ import ProductItem from '../components/ProductItem'
 import Modal from '../components/Modal'
 
 import promo from '../assets/images/promo.png'
+import promo2 from '../assets/images/promo2.jpg'
 import banner from '../assets/images/capitana.png'
 import logoBanner from '../assets/images/capitana-logo.png'
 import ItemDestacado from "../components/ItemDestacado";
@@ -141,7 +142,12 @@ class PageCinepolis extends Component {
             <div className="col-2">
               <h2>Lo más vendido</h2>
             </div>
-            {destacados}
+            <div className="col-5">
+              <img src={promo} alt="promo" className="img-fluid"/>
+            </div>
+            <div className="col-5">
+              <img src={promo2} alt="promo2" className="img-fluid"/>
+            </div>
           </div>
           <div className="wrapper">
             <div className="banner">
