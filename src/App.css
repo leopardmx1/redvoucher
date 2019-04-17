@@ -828,6 +828,12 @@ video {
     margin-right: 0.5rem;
 }
 
+.gridItem p {
+  width: 100%;
+  margin: 0px;
+  font-size: 1rem;
+}
+
 @media all and (max-width: 767px) {
   .HeaderApp {
     background: white !important;
@@ -1024,6 +1030,12 @@ video {
   #intro {
     padding: 3rem 0;
     align-items: center;
+  }
+
+  .gridItem p {
+    width: 100%;
+    margin: 0px;
+    font-size: 1rem;
   }
 }
 

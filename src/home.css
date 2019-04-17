@@ -30,6 +30,12 @@
     flex-direction: column;
 }
 
+.gridItem p {
+    width: 100%;
+    margin: 0px;
+    font-size: 1.5rem;
+}
+
 .cinepolis-color {
     background-color: var(--cinepolis-color);
 }
@@ -58,6 +64,11 @@
         grid-template-columns: auto;
         grid-template-rows: 33.33% 33.33% 33.33%;
         height: 90vh;
+    }
+    .gridItem p {
+        width: 100%;
+        margin: 0px;
+        font-size: 1rem;
     }
 }
 
