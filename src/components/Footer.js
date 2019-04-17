@@ -22,7 +22,7 @@ class Footer extends Component {
         </div>
           <div className="wrapper">
               <br/><br/>
-              2019 &copy; RED VOUCHER - <Link to="/aviso-privacidad">AVISO DE PRIVACIDAD</Link> / <Link to="/aviso-privacidad">CONDICIONES DE USO </Link>
+              2019 &copy; RED VOUCHER - <Link to="/aviso-privacidad">AVISO DE PRIVACIDAD</Link> / <Link to="/terminos-y-condiciones">CONDICIONES DE USO </Link>
               <br/><br/>
           </div>
       </footer>

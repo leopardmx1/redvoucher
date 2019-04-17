@@ -58,6 +58,7 @@ class Login extends Component {
               <input type="password" name="pass" id="pass" placeholder="Contraseña" onChange={this.changeInput} /> <br/>
               <input type="checkbox" name="rembember" id="remember"/> <label htmlFor="remember">Recordarme</label> <br/><br/>
               <button type="submit" className="send">Iniciar Sesión</button>
+              <Link to="/recover-password" className="lostPassword">Olvide mi contraseña</Link>
             </form>
             <hr/>
             <h3>

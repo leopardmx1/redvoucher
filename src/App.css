@@ -1037,6 +1037,10 @@ video {
     margin: 0px;
     font-size: 1rem;
   }
+
+  .itemDestacado .image {
+    padding-left: 8.5rem;
+  }
 }
 
 /** Mi escape **/
@@ -1068,5 +1072,11 @@ video {
 .AvisoPage p {
   font-size: 0.9rem;
   text-align: left;
+}
+
+a.lostPassword {
+  padding: 1.5rem 0 0.5rem;
+  display: block;
+  color: var(--miescape-color);
 }
 
