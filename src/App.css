@@ -267,7 +267,7 @@ footer a i {
   position: relative;
 }
 
-.form form {
+.form.register form {
   padding: 1rem;
 }
 
