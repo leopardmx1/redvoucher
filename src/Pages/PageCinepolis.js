@@ -6,12 +6,6 @@ import { history } from "../components/_helpers/history";
 import HeaderApp from '../components/HeaderApp'
 import FooterApp from '../components/FooterApp'
 import ProductItem from '../components/ProductItem'
-import Modal from '../components/Modal'
-
-import promo from '../assets/images/promo.png'
-import promo2 from '../assets/images/promo2.jpg'
-import banner from '../assets/images/capitana.png'
-import logoBanner from '../assets/images/capitana-logo.png'
 import ItemDestacado from "../components/ItemDestacado";
 
 class PageCinepolis extends Component {
@@ -62,66 +56,13 @@ class PageCinepolis extends Component {
 
 
   render() {
-    let products = [
-      {
-        id: 1,
-        name: '6 boletos tradicionales',
-        description: 'Lorem ipsum dolor ghkkjhg jhghj',
-        price: 260,
-        qty: 1
-      },
-      {
-        id: 2,
-        name: '6 boletos tradicionales',
-        description: 'Lorem ipsum dolor ghkkjhg jhghj',
-        price: 260,
-        qty: 1
-
-      },
-      {
-        id: 3,
-        name: '6 boletos tradicionales',
-        description: 'Lorem ipsum dolor ghkkjhg jhghj',
-        price: 260,
-        qty: 1
-      },
-      {
-        id: 4,
-        name: '6 boletos tradicionales',
-        description: 'Lorem ipsum dolor ghkkjhg jhghj',
-        price: 260,
-        qty: 1
-      },
-      {
-        id: 5,
-        name: '6 boletos tradicionales',
-        description: 'Lorem ipsum dolor ghkkjhg jhghj',
-        price: 260,
-        qty: 1
-      },
-      {
-        id: 6,
-        name: '6 boletos tradicionales',
-        description: 'Lorem ipsum dolor ghkkjhg jhghj',
-        price: 260,
-        qty: 1
-      }
-    ]
-
-    let productVideo = {
-      id: 1,
-      name: '6 boletos tradicionales pelicula iron man',
-      description: 'Lorem ipsum dolor ghkkjhg jhghj',
-      price: 260,
-      qty: 1
-    }
 
     let articles = this.props.products.map((item) => {
       return <div className="col" key={item.id}> <ProductItem item={item} type="cinepolis" /> </div>
     })
 
     let destacados = this.props.latest.map((item) => {
-      return <div className="col-5"> <ItemDestacado item={item} /> </div>
+      return <div className="col" key={item.id}> <ItemDestacado item={item} /> </div>
     })
 
     return(
@@ -138,16 +79,11 @@ class PageCinepolis extends Component {
               <div className="cl-5"></div>
             </div>
           </header>
-          <div className="wrapper flex mb-3">
-            <div className="col-2">
+          <div className="wrapper flex mb-3 latest">
+            <div className="col">
               <h2>Lo más vendido</h2>
             </div>
-            <div className="col-5">
-              <img src={promo} alt="promo" className="img-fluid"/>
-            </div>
-            <div className="col-5">
-              <img src={promo2} alt="promo2" className="img-fluid"/>
-            </div>
+            {destacados}
           </div>
           <div className="wrapper">
             <div className="banner">

@@ -24,6 +24,20 @@ class Register extends Component {
       showTarjeta: false,
       showEmail: false,
       showEmpleado: false,
+      isDisabled: true,
+      valids: {
+        firstName: false,
+        lastName: false,
+        gender: false,
+        day: false,
+        month: false,
+        year: true,
+        pass: true,
+        pass_c: true,
+        email: true,
+        registerType: true
+
+      }
     }
 
     this.changeInput = this.changeInput.bind(this)
@@ -31,13 +45,19 @@ class Register extends Component {
   }
 
   changeInput(e) {
-    let name = e.target.name, value = e.target.value
-    console.log(e.target.name, e.target.value)
+    let name = e.target.name, value = e.target.value.trim()
+    console.log(name, value)
+
+    if(value === '' || value === null) {
+      console.log('Esta vacio')
+      this.setState({ valids: {...this.state.valids, [name]: false} })
+    } else {
+      this.setState({ valids: {...this.state.valids, [name]: true} })
+    }
 
     if(name === 'registerType') {
       switch (value) {
         case 'email':
-          this.setState({showEmail: true})
           this.setState({showTarjeta: false})
           this.setState({showEmpleado: false})
           break
@@ -67,6 +87,8 @@ class Register extends Component {
   }
 
   render() {
+    let { valids } = this.state
+
     return (
       <div className="RegisterPage">
         <Header />
@@ -101,7 +123,7 @@ class Register extends Component {
               </select>
               <select name="registerType" id="registerType" onChange={this.changeInput}>
                 <option value="" disabled selected>Selecciona una opci&oacute;n</option>
-                <option value="correo">Correo Corporativo</option>
+                <option value="email">Correo Corporativo</option>
                 <option value="empleado">No. de Empleado</option>
                 <option value="tarjeta">No. de Tarjeta</option>
               </select>
@@ -117,7 +139,7 @@ class Register extends Component {
               </div>
 
               <br/><br/>
-              <button type="submit" className="send">Registrarme</button>
+              <button type="submit" className="send" disabled={this.state.isDisabled}>Registrarme</button>
             </form>
 
 

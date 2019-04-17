@@ -16,7 +16,7 @@ class Home extends Component{
     render() {
     return(
       <div className="HomePage">
-        <h1 className="text"> &iquest;Qué quieres a hacer hoy? </h1>
+        <h1 className="text"> &iquest;Qué quieres hacer hoy? </h1>
         <div className="gridPage">
           <div className="gridItem cinepolis-color">
               <p style={{width: "100%", color: "#7accf4", margin: 0, fontSize: "1.5rem"}}>¿Vamos al cine?</p>

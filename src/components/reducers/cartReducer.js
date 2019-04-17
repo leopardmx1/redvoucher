@@ -42,8 +42,16 @@ const cartReducer = (state = initState, action)=>{
     switch (action.type) {
         case ADD_TO_CART:
             let addedProduct = state.products.find(item=> item.id === action.id)
-                //check if the action id exists in the addedItems
-            let existed_item= state.cart.find(item=> action.id === item.id)
+
+
+            //check if the action id exists in the addedItems
+            let existed_item = state.cart.find(item=> action.id === item.id)
+            console.log(existed_item)
+
+            if(addedProduct === undefined) {
+                addedProduct = state.latestBuy.find(item => action.id === item.id)
+            }
+
             if(existed_item)
             {
                 addedProduct.quantity += 1
@@ -52,7 +60,7 @@ const cartReducer = (state = initState, action)=>{
                     ...state 
                 }
             }
-            else{
+            else {
                 addedProduct.quantity = 1;
                 //calculating the total
                 addedProduct.subtotal = addedProduct.quantity * addedProduct.price 
@@ -63,6 +71,8 @@ const cartReducer = (state = initState, action)=>{
                 }
                 
             }
+
+
         case REMOVE_TO_CART:
             let itemToRemove= state.cart.find(item=> action.id === item.id)
             let new_items = state.cart.filter(item=> action.id !== item.id)

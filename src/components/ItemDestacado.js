@@ -49,4 +49,4 @@ const mapDispatchToProps = (dispatch) =>{
     }
 }
 
-export default connect(mapDispatchToProps)(ItemDestacado)
+export default connect(null, mapDispatchToProps)(ItemDestacado)
