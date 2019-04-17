@@ -10,6 +10,7 @@ import PageCinepolis from './Pages/PageCinepolis'
 import Cart from './Pages/Cart'
 import PageVips from './Pages/PageVips'
 import PageEscape from './Pages/PageEscape'
+import Aviso from './Pages/Aviso'
 
 
 
@@ -27,6 +28,7 @@ class Main extends Component {
                         <Route exact path='/vips' component={PageVips} />
                         <Route exact path='/mi-escape' component={PageEscape} />
                         <Route exact path='/cart' component={Cart} />
+                        <Route exact path='/aviso-privacidad' component={Aviso} />
 
                     </Switch>
                 </div>

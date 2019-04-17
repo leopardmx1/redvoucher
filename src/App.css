@@ -1061,3 +1061,12 @@ video {
   background: var(--miescape-color);
 }
 
+.AvisoPage .container {
+  padding: 1rem;
+}
+
+.AvisoPage p {
+  font-size: 0.9rem;
+  text-align: left;
+}
+
