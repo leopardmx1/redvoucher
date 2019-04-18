@@ -10,12 +10,16 @@ export default class Dropdown extends  Component {
         history.push('/')
     }
 
+    goHistorial() {
+        history.push('/historial')
+    }
+
     render() {
         let { open } = this.props
         return (
             <div className={`dropdown bg ${ open ? 'show' : 'hide'}`}>
                 <ul>
-                    <li>Historial de compras</li>
+                    <li onClick={this.goHistorial}>Historial de compras</li>
                     <li onClick={this.logout}>Salir</li>
                 </ul>
             </div>

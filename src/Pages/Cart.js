@@ -30,12 +30,12 @@ class Cart extends Component {
 
     if(cart!== null && cart.length > 0) {
       items =  cart.map((item) => {
-        return <tr className="item"> <td> <button className="delete" onClick={() => this.removeToCart(item.id)}>&times;</button> </td> <td> <b>{item.title}</b><br/>{item.description} </td>
+        return <tr className="item"> <td> <button className="delete" onClick={() => this.removeToCart(item.id)}>&times;</button> </td> <td> <b>{item.title}</b><br/> <span className="description"> {item.description} </span></td>
                       <td> <input type="number" name="qty" defaultValue={item.quantity} /> </td> <td> {item.price} </td> <td> { item.subtotal } </td> </tr>
       })
 
     } else {
-      items = <tr class="cl-2 white-text"> <td colSpan="5">No hay productos en el carrito</td> </tr>
+      items = <tr className="cl-2 white-text"> <td colSpan="5">No hay productos en el carrito</td> </tr>
     }
     return(
       <div className="cart">

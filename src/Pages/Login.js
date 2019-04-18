@@ -8,7 +8,6 @@ import Footer from '../components/Footer'
 
 import video from '../assets/videos/redvoucher.mp4'
 import '../assets/css/Login.css'
-import cart from "../assets/images/cart.png";
 
 class Login extends Component {
 
@@ -54,8 +53,8 @@ class Login extends Component {
         <div className="container">
           <div className="form">
             <form onSubmit={this.sendData}>
-              <input type="text" name="user" id="user" placeholder="Email / No. de empleado / No. Tarjeta" onChange={this.changeInput}/> <br/>
-              <input type="password" name="pass" id="pass" placeholder="Contraseña" onChange={this.changeInput} /> <br/>
+              <input type="text" name="user" id="user" placeholder="Email / No. de empleado / No. Tarjeta" onChange={this.changeInput} required/> <br/>
+              <input type="password" name="pass" id="pass" placeholder="Contraseña" onChange={this.changeInput} required /> <br/>
               <input type="checkbox" name="rembember" id="remember"/> <label htmlFor="remember">Recordarme</label> <br/><br/>
               <button type="submit" className="send">Iniciar Sesión</button>
               <Link to="/recover-password" className="lostPassword">Olvide mi contraseña</Link>

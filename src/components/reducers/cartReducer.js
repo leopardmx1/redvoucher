@@ -36,7 +36,12 @@ const initState = {
         {id:13,title:'6 boletos tradicionales de lunes a domingo', description: "Folio válido solo para renta de cualquier película del catalogo. No aplica para rentar películas de estreno, preestreno, preventa ni para partidos de fútbol, béisbol o eventos en vivo.", price:39,img:Item13},
         {id:14,title:'Combos medianos', description: "4 combos medianos válidos de lunes a domingo; cada combo contiene unas palomitas medianas y un refresco mediano.", price:237,img: Item13},
     ],
-    cart:[]
+    cart:[],
+    buys: [
+      { id: 1, date: '23/04/19', status: 'payment', total: 580 },
+      { id: 2, date: '25/05/19', status: 'payment', total: 1000 },
+      { id: 3, date: '23/04/91', status: 'payment', total: 580 },
+    ]
 }
 const cartReducer = (state = initState, action)=>{
     switch (action.type) {

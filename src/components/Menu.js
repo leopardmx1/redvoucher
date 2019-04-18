@@ -13,6 +13,10 @@ export default class Menu extends Component {
         history.push('/')
     }
 
+    goHistorial() {
+        history.push('/historial')
+    }
+
     render() {
         let {open} = this.props
 
@@ -20,7 +24,7 @@ export default class Menu extends Component {
             <div className={`menu ${open ? 'show' : 'hide'} `}>
                 <ul>
                     <li>Hola, Héctor</li>
-                    <li>Historial de compras</li>
+                    <li onClick={this.goHistorial}>Historial de compras</li>
                     <li onClick={this.logout}>Salir</li>
                     <li><Link to="/cart" className="text-blue"> Mis compras <i className="fas fa-shopping-cart"></i></Link></li>
                 </ul>

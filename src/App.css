@@ -840,10 +840,10 @@ video {
     box-shadow: 0 0 5px;
   }
 
-  .HeaderApp .wrapper {
+  .HeaderApp .wrapper, .header-page .wrapper {
     justify-content: space-between;
   }
-  .HeaderApp nav {
+  .HeaderApp nav, .header-page nav {
     display: none;
   }
 
@@ -1041,6 +1041,55 @@ video {
   .itemDestacado .image {
     padding-left: 8.5rem;
   }
+
+  table {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+
+  .cart a.btn.cl-2 {
+    color: #fff;
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  span.description {
+    display: none;
+  }
+
+  button.delete {
+    height: 30px;
+    width: 30px;
+    line-height: 8px;
+    padding: 0.3rem;
+    margin: 0;
+  }
+
+  .cart input[type="number"] {
+    width: 28px;
+    padding: 0.5rem;
+    min-width: 50px;
+  }
+
+  .cl-2.data {
+    max-width: 100%;
+  }
+
+  tr b {
+    font-weight: 300;
+  }
+
+  .historial table {
+    margin-bottom: 1.5rem;
+  }
 }
 
 /** Mi escape **/
@@ -1077,6 +1126,6 @@ video {
 a.lostPassword {
   padding: 1.5rem 0 0.5rem;
   display: block;
-  color: var(--miescape-color);
+  color: var(--green-two);
 }
 
