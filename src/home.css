@@ -8,17 +8,17 @@
 .HomePage h1 {
     box-sizing: border-box;
     margin: 0;
-    padding-top: 2rem;
+    padding-top: 0rem;
     width: 100%;
     position: absolute;
     top: 2rem;
     color: #fff;
-    font-size: 4.5rem;
+    font-size: 6rem;
 }
 
 .gridPage {
     display: grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
     height: 100vh;
 }
 
@@ -48,6 +48,14 @@
     background-color: var(--miescape-color);
 }
 
+img.icon {
+    max-width: 50px;
+    margin: 3rem 0;
+}
+
+img.iconss {
+    margin: 1rem 0;
+}
 
 
 @media screen and (max-width: 767px) {
@@ -62,8 +70,17 @@
     }
     .gridPage {
         grid-template-columns: auto;
-        grid-template-rows: 33.33% 33.33% 33.33%;
-        height: 90vh;
+        grid-template-rows: 30% 30% 30% 30% 30%;
+        height: auto;
+    }
+
+    img.icon {
+        margin: 1rem 0 0;
+    }
+
+    img.iconss {
+        margin: 1rem 0;
+        max-width: 60%;
     }
     .gridItem p {
         width: 100%;
